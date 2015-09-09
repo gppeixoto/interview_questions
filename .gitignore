@@ -1,4 +1,5 @@
 *.class
+.DS_Store
 
 !(^c[0-9]+p[0-9]+\.(java|cpp|py)$)
 !(*.md)
