@@ -27,7 +27,6 @@ public class c2p4
         System.out.println("x: " + x);
         Node l = null, r = null, p = head;
         while (p != null) {
-            System.out.println("processing node: " + p.data);
             if (p.data < x) {
                 if (l == null) l = new Node(p.data);
                 else l.append(p.data); //creating new nodes
