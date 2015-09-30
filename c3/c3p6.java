@@ -11,8 +11,8 @@ public class c3p6 {
     public static Stack<Integer> sort_stack(Stack<Integer> to_sort) {
         Stack<Integer> aux = new Stack<Integer>();
         int min = Integer.MAX_VALUE;
-        int sz = 0;
-        int i = 0;
+        int sz = 0, i = 0;
+        
         while (!to_sort.empty()) {
             while (!to_sort.empty()) {
                 int top = to_sort.pop();
@@ -21,13 +21,9 @@ public class c3p6 {
                 sz++;
             }
             while (sz > i) {
-                if (aux.peek() != min) {
-                    to_sort.push(aux.pop());
-                    sz--;
-                } else {
-                    aux.pop();
-                    sz--;
-                }
+                int top = aux.pop();
+                sz --;
+                if (top != min) to_sort.push(top);
             }
             aux.push(min);
             sz++;
