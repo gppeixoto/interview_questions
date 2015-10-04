@@ -74,7 +74,11 @@ public class c2p7
     public static void main(String[] args) {
         Node head = new Node(0);
         for (int i=1; i<4; ++i) head.append(randInt(3));
-        Node aux = head; while (aux != null){ System.out.print(aux.data+" "); aux=aux.next;} System.out.println();
+        Node aux = head;
+        while (aux != null) {
+         System.out.print(aux.data+" "); aux=aux.next;
+        }
+        System.out.println();
         System.out.println(checkpal(head));
     }
 }
