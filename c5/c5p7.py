@@ -1,5 +1,3 @@
-from math import log
-
 class BitInteger:
     INTEGER_SIZE = 32
     
@@ -9,9 +7,6 @@ class BitInteger:
     def fetch(self, p):
         return 1 if (self.val & (1 << p)) != 0 else 0
     
-    def __str__(self):
-        return str(self.val)
-
 def find_missing(nb_list, col):
     if col >= BitInteger.INTEGER_SIZE:
         return 0
