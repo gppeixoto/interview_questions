@@ -1,6 +1,12 @@
 # ask if it is allowed to use
 # the -1 value and if it is allowed
 # to use check operations (<, >, etc)
+
+# notes for java:
+#   > check if it should be for integers or double;
+#   > remember to not compare (==) on doubles, instead
+#   > using some threshold eps=1e-6
+
 import sys
 
 def negate(n):
