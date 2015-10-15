@@ -54,10 +54,30 @@ public class c11p1{
         return a;
     }
 
+    public static int[] merge_inplace(int[] a, int[] b, int lastA, int lastB)
+    {
+        int lastMerge = lastA+lastB+1;
+        while (lastB >= 0)
+        {
+            if (lastA >=0 && a[lastA] <= b[lastB])
+            {
+                a[lastMerge] = b[lastB];
+                lastB--;
+            }
+            else
+            {
+                a[lastMerge] = a[lastA];
+                lastA--;
+            }
+            lastMerge--;
+        }
+        return a;
+    }
+
     public static void main(String[] args){
         int[] a = {1,3,5,7,9,11, 0, 0, 0};
         int[] b = {4,6,12};
-        int[] res = merge_inplace(a,b, 6);
+        int[] res = merge_inplace(a,b, 5, 2);
         for (int i=0; i < res.length; ++i) System.out.print(res[i] + " ");
         System.out.println();
     }
