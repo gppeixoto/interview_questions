@@ -8,11 +8,22 @@ public class c11p5 {
         if (arr[mid].equals(str))
             return mid;
         
+        boolean found = false;
         for (int i=mid; i < arr.length; ++i){
             if (!arr[i].equals("")) { 
-                aux = i; break; 
+                aux = i; found = true; break; 
             }
         }
+
+        if (!found) {
+            for (int i=mid; i >= 0; --i) {
+                if (!arr[i].equals("")) { 
+                    aux = i; found = true; break; 
+                }
+            }
+        }
+
+        if (!found) return -1;
 
         if (arr[aux].equals(str))
             return aux;
@@ -27,7 +38,7 @@ public class c11p5 {
 
     public static void main(String[] args)
     {
-        String[] arr = {"at", "", "", "", "ball", "", "car", "", "", "dad"};
+        String[] arr = {"at", "", "", "", "", "", "", "", "", ""};
         System.out.println(find(arr, "at"));
     }
 }
