@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class c9p11{
-    static int calls = 0;
     static HashMap<String, Integer> memo;
 
     public static String sub(String exp, int i, int j){
@@ -14,7 +13,6 @@ public class c9p11{
     }
 
     public static int f(String exp, boolean res){
-        c9p11.calls += 1;
         //check if precomputed
         String key = exp+"_"+res;
         if (memo.containsKey(key)){
@@ -58,17 +56,7 @@ public class c9p11{
     }
 
     public static void main(String[] args){
-        ArrayList<String> exps = new ArrayList<String>();
         memo = new HashMap<String, Integer>();
-        exps.add("1&1|0");
-        for (String exp : exps) {
-            System.out.println("f(" + exp + ", true)=" + f(exp, true));
-            System.out.println("num_calls: " + c9p11.calls);
-            System.out.println();
-            c9p11.calls = 0;
-        }
-        for (String exp : memo.keySet()){
-            System.out.println("f(" + exp + ") = " + memo.get(exp));
-        }
+        System.out.println(f("1^0|1&0|0^1", true));
     }
 }

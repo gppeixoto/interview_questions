@@ -1,7 +1,6 @@
 public class c11p3{
 
     public static int search(int[] array, int begin, int end, int n) {
-        System.out.println("-> " + begin + " " + end);
         if (end < begin)
             return -1;
         int mid = (begin+end)/2;
@@ -25,7 +24,7 @@ public class c11p3{
             else
                 return search(array, begin, mid-1, n);
         }
-        else    //array[mid] == array[begin]
+        else
         {
             if (array[mid] != array[end])
                 return search(array, mid+1, end, n);
