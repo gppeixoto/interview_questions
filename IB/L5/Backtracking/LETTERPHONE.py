@@ -27,3 +27,9 @@ def letterCombinations(A):
     ret = helper(A, 0, cur, map_)
     ret = sorted(ret)
     return ret
+
+def substrings(s, i):
+    if len(s) <= 1:
+        return s
+
+    for k in xrange()
