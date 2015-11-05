@@ -33,6 +33,3 @@ class Solution:
 
     def isPalindrome(self, A):
         return list(A) == list(reversed(A))
-        
-        
-        
