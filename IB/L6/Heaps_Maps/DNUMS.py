@@ -1,3 +1,15 @@
+"""
+A=[1, 2, 1, 3, 4, 3] and K = 3
+
+All windows of size K are
+
+[1, 2, 1]
+[2, 1, 3]
+[1, 3, 4]
+[3, 4, 3]
+
+So, we return an array [2, 3, 3, 2].
+"""
 class Solution:
 # @param A : list of integers
 # @param B : integer
@@ -8,7 +20,7 @@ class Solution:
             return []
         if k > len(A):
             k = len(A)
-        
+
         occs = {}
         sum_ = 0
         res = []
